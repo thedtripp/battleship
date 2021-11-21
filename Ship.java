@@ -12,7 +12,6 @@ public class Ship {
         shipPoints = new Point[length]; 
 
         // set point of origin
-        // b.getGrid()[origin.getRow()][origin.getColumn()].setIsShip(true);
         // set additional points based on length and orientation
         
         // vertical ship
@@ -97,7 +96,6 @@ public class Ship {
             int row = p.getRow() - 1;
             int col = p.getColumn() - 1;
             pointList += " (" + row + ", " + col + ")";
-            //pointList += " (" + p.getRow() + ", " + p.getColumn() + ")";
         }
         pointList += ".";
         return pointList;
