@@ -1,11 +1,6 @@
 import java.util.ArrayList; // import the ArrayList class
 import java.util.Random;
 
-//random number guess code
-//private Random rand;
-// rand = new Random();
-//currentGuess = rand.nextInt((getHigh() - getLow()) + 1) + getLow();
-
 public class GameBoard {
     
     static final int ROWS = 11;
@@ -29,7 +24,7 @@ public class GameBoard {
 
 	private ArrayList<Ship> ships = new ArrayList<Ship>(); // Create an ArrayList object
 
-    public GameBoard() {
+    	public GameBoard() {
 		for (int r = 0; r < ROWS; r++) {
 			for (int c = 0; c < COLS; c++) {
 				grid[r][c] = new Point(r, c, this, false);
@@ -39,7 +34,7 @@ public class GameBoard {
 				}
 			}
 		}
-    }
+    	}
     
     // Display the grid
 	public void display() {
@@ -97,11 +92,9 @@ public class GameBoard {
 	public void guess() {
 		rand = new Random();
 		currentGuess = rand.nextInt(guesses.size());
-		//System.out.println(currentGuess);
 		guesses.get(currentGuess).toString();
 		shotFired(guesses.get(currentGuess));
 		System.out.println("I will shoot here: " + guesses.get(currentGuess));
-		//need to remove guess from the arraylist.
 		guesses.remove(currentGuess);
 		System.out.println(guesses.size());
 
@@ -133,7 +126,6 @@ public class GameBoard {
 		}
 		if (sunkFlag == true) {
 			allSunk = true;
-			//System.out.println("All ships have been sunk!");
 		}
 		// if not hit, miss.
 		if (!this.getPoint(p.getRow(), p.getColumn()).getHit()) {
@@ -149,14 +141,12 @@ public class GameBoard {
 			// get a point
 			buildHere = rand.nextInt(buildShip.size());
 			Point p = buildShip.get(buildHere); //try building at this point
-			//System.out.println("Building ship.");
 			Ship aShip = new Ship(p, rand.nextBoolean(), shipSizes[i], this );
 			//System.out.println("Number of ships: " + ships.size());
 			if (ships.size() > 1) {
 				for (int j = 0; j < ships.size() - 1; j++) {
 					//check for collision
 					if (aShip.collidesWith(ships.get(j))) {
-						//System.out.println("Collision alert.");
 						
 						for (Point sp: aShip.getPoints()) {
 							boolean keepPoint = false; //should keep
@@ -175,8 +165,6 @@ public class GameBoard {
 							}
 						}
 						this.removeShip(aShip);
-						//System.out.println("Number of Ships: " + this.ships.size());
-						//this.buildShip.remove(buildHere);
 						i--;
 					} 
 				}
@@ -209,15 +197,3 @@ public class GameBoard {
 	}
 
 }
-/*abstract
-Folks want to kick it but it's not conducive...
-I was like, "Dueces" and feeling elusive.
-No one had seen me 'cause I stay secluded,
-hiding away like, "Is this dude reclusive?"
-
-Witness protection asked, "How does he do this?"
-Compared me to Harry Houdini. The turth is:
-The media contacting me for exclusives,
-but I could not comment so now, they look stupid.
-
-*/
