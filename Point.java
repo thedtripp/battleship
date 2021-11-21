@@ -5,7 +5,6 @@ public class Point {
     private boolean isShip;
     private boolean hit = false;
     private boolean miss = false;
-    //private char
 
     protected GameBoard board;
 
@@ -22,15 +21,12 @@ public class Point {
         if (this.getRow() == 0 && this.getColumn() == 0) {
             return ' ';
         } else if (this.getRow() == 0 && this.getColumn() > 0) {
-            //int a = 64 + this.getColumn(); // print 'A' - 'J'
             //labels
             int a = 47 + this.getColumn();
-            //int a = 47 + 1 + this.getColumn();
             return (char)a;
         } else if (this.getColumn() == 0 && this.getRow() > 0) {
             //labels
             int a = 47 + this.getRow();
-            //int a = 47 + 1 + this.getRow();
             return (char)a;
         } else if (this.getHit()) {
             return 'X';
@@ -41,8 +37,6 @@ public class Point {
         else if (this.getIsShip()) {
             //hide ships
             return '~';
-            //show ships
-            //return 'O';
         }
         // empty water
 		return '~';
