@@ -7,7 +7,10 @@ a console battleship game written in Java
   - $ `git clone https://github.com/thedtripp/battleship.git`
   - $ `cd battleship`
 - Compile the Java files
-  - $ `javac *`
+  - $ `javac *.java`
 - Run the main Java file
   - $ `java BattleShipMain`
 - Sink some battleships
+
+## Gameplay
+<img src="https://user-images.githubusercontent.com/38776199/142758180-d7bdbf05-d283-4b88-9ea2-38b6c1c3beae.png" width="200" />
