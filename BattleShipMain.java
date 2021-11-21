@@ -11,13 +11,11 @@ public class BattleShipMain {
 		System.out.println("Welcome to BATTLESHIP.");
 		System.out.println("Placing ships...");
 		board.placeShips();	
-		//board.cheat();
 		board.display();
 
 
 		while (!board.getAllSunk()) {
-			//board.cheat();
-            System.out.println("Select coordinates.");
+            		System.out.println("Select coordinates.");
             
             //handle input mismatch exception
             try {
